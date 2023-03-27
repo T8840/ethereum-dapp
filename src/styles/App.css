@@ -1,0 +1,94 @@
+.App{
+  background-image: url("../utils/bg.png");
+  height: 100vh;
+  background-size: cover; 
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10%;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgb(99, 5, 117);
+}
+
+
+.head_navbar{
+  background-color: #FBFBFB;
+  width: 90%;
+  text-align: center;  
+  color: #2b0f75;
+}
+
+.home_content{
+  display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+}
+
+.bttn_ui {
+  background-image: linear-gradient(#FFA1FB, #f150ff);
+  border: none;
+  padding: 8px 25px 8px 25px;
+  border-radius: 20px;
+  font-weight: 700;
+  transition: 0.3s;
+  color: #2b0f75;
+}
+.bttn_ui:hover {
+  background-image: linear-gradient(#fff3fe, #c6aeff);
+
+}
+
+input{
+  width: 60%;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 5px;
+  
+}
+input:focus{
+  outline: none;
+}
+
+.systemUser{
+  width: 70%;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: white;
+  color: #2b0f75;
+  transition-duration: .5s;
+}
+
+.hidden{
+  display: none;
+}
+
+.systemUser:hover{
+  transform: scale(1.1);
+  z-index: 10;
+}
+.systemUser:hover .hidden{
+  display: block;
+
+}
+
+.candData{
+  background-color: white;
+}
+
+input[type='file'] {
+  color: rgb(255, 255, 255)
+}
