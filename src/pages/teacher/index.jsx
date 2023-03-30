@@ -4,12 +4,14 @@ import { Form, Input, InputNumber, Popconfirm, Table, Typography, Button, Select
 const { Option } = Select;
 
 const originData = [];
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 6; i++) {
     originData.push({
         key: i.toString(),
-        name: `Edrward ${i}`,
-        age: 32,
-        address: `London Park no. ${i}`,
+        name: `李明 ${i}`,
+        age: 16,
+        gender: `男`,
+        score: `8${i}`,
+        address: `北京市小区第${i}号`,
     });
 }
 const EditableCell = ({
@@ -96,37 +98,37 @@ const Teacher = () => {
     };
     const columns = [
         {
-            title: 'Full Name',
+            title: '名字',
             dataIndex: 'name',
             width: '15%',
             editable: true,
         },
         {
-            title: 'Gender',
+            title: '性别',
             dataIndex: 'gender',
             width: '10%',
             editable: true,
         },
         {
-            title: 'Address',
+            title: '地址',
             dataIndex: 'address',
-            width: '20%',
+            width: '40%',
             editable: true,
         },
         {
-            title: 'Score',
+            title: '分数',
             dataIndex: 'score',
             width: '10%',
             editable: true,
         }, 
         {
-            title: 'Date',
+            title: '录入日期',
             dataIndex: 'date',
             width: '10%',
             editable: true,
         },
         {
-            title: 'operation',
+            title: '操作',
             dataIndex: 'operation',
             render: (_, record) => {
                 const editable = isEditing(record);
@@ -138,15 +140,15 @@ const Teacher = () => {
                                 marginRight: 8,
                             }}
                         >
-                            Save
+                            保存
                         </Typography.Link>
                         <Popconfirm title="Sure to cancel?" onConfirm={cancel}>
-                            <a>Cancel</a>
+                            <a>取消</a>
                         </Popconfirm>
                     </span>
                 ) : (
                     <Typography.Link disabled={editingKey !== ''} onClick={() => edit(record)}>
-                        Edit
+                        编辑
                     </Typography.Link>
                 );
             },
@@ -170,10 +172,10 @@ const Teacher = () => {
     return (
         <>
             <Button type="primary" onClick={showDrawer} icon={<UserAddOutlined />}>
-                Register Student
+                新学生录入
             </Button>
             <Drawer
-                title='Register New Student'
+                title='新学生录入'
                 width={720}
                 onClose={onClose}
                 open={open}
@@ -194,7 +196,7 @@ const Teacher = () => {
                         <Col span={12}>
                             <Form.Item
                                 name="fullName"
-                                label="Full Name"
+                                label="姓名"
                                 rules={[
                                     {
                                         required: true,
@@ -205,10 +207,11 @@ const Teacher = () => {
                                 <Input placeholder="Please enter user name" />
                             </Form.Item>
                         </Col>
+                        
                         <Col span={12}>
                             <Form.Item
                                 name="address"
-                                label="Address"
+                                label="地址"
                                 rules={[
                                     {
                                         required: true,
@@ -230,7 +233,7 @@ const Teacher = () => {
                         <Col span={12}>
                             <Form.Item
                                 name="gender"
-                                label="Gender"
+                                label="性别"
                                 rules={[
                                     {
                                         required: true,
@@ -239,15 +242,15 @@ const Teacher = () => {
                                 ]}
                             >
                                 <Select placeholder="Please select a gender">
-                                    <Option value="male">Male</Option>
-                                    <Option value="female">Female</Option>
+                                    <Option value="male">男</Option>
+                                    <Option value="female">女</Option>
                                 </Select>
                             </Form.Item>
                         </Col>
                         <Col span={12}>
                             <Form.Item
                                 name="score"
-                                label="Score"
+                                label="分数"
                                 rules={[
                                     {
                                         required: true,
@@ -268,7 +271,7 @@ const Teacher = () => {
                         <Col span={24}>
                             <Form.Item
                                 name="date"
-                                label="Date"
+                                label="日期"
                                 rules={[
                                     {
                                         required: true,

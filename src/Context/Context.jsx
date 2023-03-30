@@ -16,8 +16,6 @@ export const VoterProvider = ({ children }) => {
 
     const [isManager, setIsManager] = useState(false);
     const [errorPage, setErrorPage] = useState(false)
-    const [tokenID, setTokenID] = useState(-1)
-    const [winner, setWinner] = useState({ address: "", name: "", proposal: "", votes: 0 })
 
     const contractAddress = "0x585f59c9143A4E4f94eE34Bba45330b99a27f4Fe"
     const contractABI = abi.abi;
@@ -62,26 +60,9 @@ export const VoterProvider = ({ children }) => {
         }
 
 
-        const setTokenID_Function = async () => {
-
-            try {
-
-                if (window.ethereum && currentAccount && votingSystemContract && chainId === chain_id) {
-
-                    let val = await votingSystemContract.getTokenId();
-                    console.log(val)
-                    setTokenID(parseInt(val._hex) - 1);
-                }
-
-            } catch (error) {
-                console.log(error);
-            }
-        }
-
 
         if (currentAccount) {
             checkIfManager();
-            setTokenID_Function()
         }
 
 
@@ -127,10 +108,9 @@ export const VoterProvider = ({ children }) => {
             const studentTokenIds = '89099581206133984420867835859143877944362923373453247343276904187957497299044'
             const studentBalances = await openseaTestContract.balanceOf(currentAccount, studentTokenIds.toString());
             console.log("hold student nft account: ",studentBalances.toString()); // 输出代币余额
-            if(studentBalances.toString()) {
+            if(studentBalances >= 1) {
                 setNftRole('1')
-
-                if(teacherBalances.toString()) {
+                if(studentBalances >= 2) {
                     setNftRole('2')
                 }
             } else {

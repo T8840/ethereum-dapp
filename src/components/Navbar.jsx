@@ -8,7 +8,7 @@ function Navbar({ user }) {
     return (
         <div className='head_navbar rounded'>
             <h2>
-                Decentralized Students System
+                基于NFT认证的学生管理系统
             </h2>
             {user && <div className='bg-dark text-white p-1'>{user}  <button className='bttn_ui' onClick={disConnectWallet}>DisConnect Wallet</button> </div>
             }

@@ -31,16 +31,16 @@ function Home() {
             <div className='home_content'>
                 <div className='pe-5'>
                     <div className='text-white ' style={{ fontSize: "22px" }}>
-                        The <b>Decentralized Students System</b> (DSS) provides <br />
-                        a platform for students info manage. Features include: <br />
+                         <b>去中心化学生管理系统</b> 
+                        是一个学生信息管理平台. 有以下特点: <br />
                         <ul>
                             <li>
-                                Use MetaWallet and SBT control auth
+                                1）使用MetaWallet钱包和SBT进行身份认证
                             </li>
-                            <li>Only hold teacher SBT can add, edit students info</li>
-                            <li>Hold student SBT can view score</li>
-                            <li>SBT can visit in the Opensea<a href="https://testnets.opensea.io/collection/school-1-1">click this visit </a></li>
-                            <li>If you connect the wallet still on the page, Seems like you dont't own the SBT.</li>
+                            <li>2）只有持有teacherSBT的钱包才允许新增、修改、删除学生信息</li>
+                            <li>3）持有学生SBT的钱包只允许采矿学生成绩信息</li>
+                            <li>SBT可以通过该网站进行查看：<a href="https://testnets.opensea.io/collection/school-1-1">click this visit </a></li>
+                            <li>如果您登录钱包后仍然还在该页面，那说明您还未持有SBT.请联系管理员获取SBT.</li>
                         </ul>
 
                     </div>
